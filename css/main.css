@@ -1,0 +1,148 @@
+td.details-control {
+  background: url('/images/details_open.png') no-repeat center center;
+  cursor: pointer;
+}
+tr.shown td.details-control {
+  background: url('/images/details_close.png') no-repeat center center;
+}
+
+@font-face {font-family: "EffraW01-Light";
+  src: url("https://db.onlinewebfonts.com/t/3cf68a3f2881b0b45c60e1132c47ce98.eot"); /* IE9*/
+  src: url("https://db.onlinewebfonts.com/t/3cf68a3f2881b0b45c60e1132c47ce98.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("https://db.onlinewebfonts.com/t/3cf68a3f2881b0b45c60e1132c47ce98.woff2") format("woff2"), /* chrome firefox */
+  url("https://db.onlinewebfonts.com/t/3cf68a3f2881b0b45c60e1132c47ce98.woff") format("woff"), /* chrome firefox */
+  url("https://db.onlinewebfonts.com/t/3cf68a3f2881b0b45c60e1132c47ce98.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
+  url("https://db.onlinewebfonts.com/t/3cf68a3f2881b0b45c60e1132c47ce98.svg#EffraW01-Light") format("svg"); /* iOS 4.1- */
+}
+
+html {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+  padding-top: 50px;
+  height: 100%;
+  font-size: 14px;
+  color: #0c0c0c;
+}
+
+tfoot input {
+  width: 100%;
+  padding: 3px;
+  box-sizing: border-box;
+}
+
+td input {
+  width: 100%;
+  padding: 3px;
+  box-sizing: border-box;
+}
+
+ul, li {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+li {
+  font-family: 'Effra W01', "Effra W01", Helvetica, sans-serif;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Effra W01', "Effra W01", Helvetica, sans-serif;
+}
+
+#admin_table_container div.DTTT { margin-bottom: 0.5em; float: right; }
+#admin_agreements_container div.DTTT { margin-bottom: 0.5em; float: left; }
+#admin_institutions_container div.DTTT { margin-bottom: 0.5em; float: left; }
+div.dataTables_wrapper { clear: both; }
+
+#main_stony_bar {
+  background-color: #FFFFFF;
+  border: 0;
+  margin-bottom: 0;
+}
+
+#main_stony_bar a {
+  color: #fff;
+}
+
+#main_stony_bar .conceal {
+  color: #000000;
+}
+
+#main_stony_bar a:hover {
+  color: #fff;
+}
+
+#menu_navbar{
+  background-color: #990000;
+  border: 0;
+  margin-bottom: 0;
+  min-height:44px !important;
+}
+.stony_bar-nav{
+  margin-bottom: 0;
+  display: flex;
+}
+.container_menu{
+  
+  width : 1170px;
+}
+.navbar-nav_main{
+  margin:0px;
+  width:98% !important;
+  color : white;
+  display: flex;
+
+}
+.stony_bar-li{
+  width:100% !important;
+}
+.menu_bar-li{
+  font-size:15px;
+  width: 25%;
+}
+.menu_bar-li>a{
+  color :#fff;
+}
+#admin_navbar {
+  background-color: #5a518f;
+  border: 0;
+  position : static !important;
+  height: 68px;
+}
+
+#admin_navbar a {
+  color: #fff;
+}
+
+#admin_navbar a:hover {
+  color: #eee;
+}
+
+#map-jumbotron {
+  height: 65%;
+  padding: 0;
+}
+
+#map-canvas {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+/* table.dataTable thead .sorting_asc, .sorting_desc, .sorting {
+  background-image: none !important;
+} */

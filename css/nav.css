@@ -1,0 +1,250 @@
+@font-face {font-family: "EffraW01-Light";
+    src: url("https://db.onlinewebfonts.com/t/3cf68a3f2881b0b45c60e1132c47ce98.eot"); /* IE9*/
+    src: url("https://db.onlinewebfonts.com/t/3cf68a3f2881b0b45c60e1132c47ce98.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("https://db.onlinewebfonts.com/t/3cf68a3f2881b0b45c60e1132c47ce98.woff2") format("woff2"), /* chrome firefox */
+    url("https://db.onlinewebfonts.com/t/3cf68a3f2881b0b45c60e1132c47ce98.woff") format("woff"), /* chrome firefox */
+    url("https://db.onlinewebfonts.com/t/3cf68a3f2881b0b45c60e1132c47ce98.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
+    url("https://db.onlinewebfonts.com/t/3cf68a3f2881b0b45c60e1132c47ce98.svg#EffraW01-Light") format("svg"); /* iOS 4.1- */
+}
+
+.quick-nav {
+    width: 100%;
+    box-shadow: none;
+}
+
+.quick-nav-white {
+    background: url("../images/white-rays-top-nav.jpg");
+}
+
+.quick-nav-black {
+    background: url("../images/black-rays-top-nav.jpg");
+}
+
+.quick-nav-wrapper{
+    width: 1160px;
+    margin: 0 auto;
+    potition: relative;
+}
+
+.quick-nav ul {
+    list-style: none;
+    max-width: 1160px;
+    min-width: 160px;
+    padding-right: 160px;
+    width: auto;
+    margin: 0;
+    float: right;
+    height: 44px;
+    border-radius: 0 0 18px 18px;
+}
+
+.quick-nav ul li {
+    border-radius: 0 0 0 16px;
+    display: list-item;
+    float: left;
+    width: auto;
+    height: 100%;
+    text-align: center;
+}
+
+.quick-nav a {
+    text-decoration: none;
+    display: block;
+    font-size: 12px;
+    font-family: "EffraW01-Light", Helvetica, sans-serif;
+    font-weight: 700;
+    padding: 14px 0 0 24px;
+    height: 100%;
+    text-transform: uppercase;
+}
+
+.quick-nav-white a {
+    color: #4b4b4b;
+}
+
+.quick-nav-black a {
+    color: #ffffee;
+}
+
+.quick-nav a:hover {
+    color: #900;
+    text-decoration: none;
+}
+
+.logo-container {
+    width: 100%;
+    background: #FFF;
+    padding: 0;
+    clear: both;
+    height: 125px;
+}
+
+.header {
+    max-width: 1160px;
+    display: block;
+    margin: 0 auto;
+}
+
+.logo-wrapper {
+    position: relative;
+    width: 100%;
+    float: left;
+}
+
+.logo {
+    width: 262px;
+    float: left;
+    display: inline-block;
+    margin: 40px auto 36px;
+    border: 0 none;
+    max-width: 357px;
+    height: auto;
+}
+
+.logo img {
+    border: 0 none;
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    padding: 1px 14px 0 0;
+    margin: 0;
+    vertical-align: middle;
+}
+
+h1 {
+    text-decoration: none;
+}
+
+h1.site-name {
+    float: left;
+    width: auto;
+    display: inline-block;
+    padding: 0;
+    margin: 40px 0 8px 0;
+    text-align: center;
+    font-weight: 400;
+    text-transform: none;
+    color: #000;
+}
+
+.site-name {
+    display: inline-block;
+    vertical-align: middle;
+    height: auto;
+}
+
+.serif {
+    font-size: 1em;
+    font-style: normal;
+}
+
+h1.site-name a {
+    font-size: 28px;
+    width: 100%;
+    text-align: left;
+    margin: 7px 0 0;
+    border-left: 1px solid #333;
+    padding: 0 0 0 16px;
+    line-height: 1;
+    font-family: 'EffraW01-Light';
+    font-weight: 400;
+    color: #000;
+    display: block;
+}
+
+div.navwrap {
+    height: auto;
+    width: 100%;
+    background-color: #990000;
+    border: 0px;
+    margin: auto;
+    padding: 0px;
+    z-index: 1;
+}
+
+div.navwrap ul {
+    list-style-type: none;
+    z-index: 10;
+    width: 1160px;
+    margin: 0 auto;
+    padding: 0px;
+    border: 0px;
+}
+
+div.navwrap.big_n_bold ul li {
+    height: 76px;
+    border: 0 none;
+    float: left;
+    font-family: 'EffraW01-Light', Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+div.navwrap.big_n_bold ul li:first-child a {
+    min-width: 40px;
+}
+
+div.navwrap ul li a {
+    display: block;
+    font-family: 'EffraW01-Light', Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 17px;
+    padding: 26px 16px 20px 16px;
+    height: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+div.navwrap ul a {
+    text-align: center;
+    text-decoration: none;
+    color: #FFF;
+}
+
+div.navwrap ul li.selected a,
+div.navwrap ul li a:hover {
+    background-color: #a00;
+    border: 1px solid #a00;
+}
+
+div.navwrap ul a:visited {
+    text-decoration: none;
+}
+
+div.navwrap ul a:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+div.navwrap ul li a span {
+    display: none;
+    right: 0;
+    bottom: -1px;
+    font-size: 1.4em;
+    line-height: 0;
+    padding: 11px 0 0 0;
+    text-align: center;
+    cursor: pointer;
+    border-left: 1px solid #800;
+}
+
+.hide-accessible {
+    position: absolute;
+    top: -99999px;
+    left: -99999px;
+    width: 2000px;
+    height: 2000px;
+}
+
+div.navwrap ul li.home-icon a:after {
+    display: block;
+    content: "\f015";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    z-index: 1;
+    font-size: 1em;
+}
