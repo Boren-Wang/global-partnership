@@ -1,5 +1,13 @@
 var editor;
-
+function format ( d ) {
+    // `d` is the original data object for the row
+    return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
+        '<tr>'+
+            '<td>Last Edit Time:</td>'+
+            '<td>'+d.programs.updated_at+'</td>'+
+        '</tr>'+
+    '</table>';
+}
 $(document).ready(function() {
     editor = new $.fn.dataTable.Editor( {
         ajax: "./inc/query/programs.php",
@@ -48,7 +56,7 @@ $(document).ready(function() {
         }]
     });
 
-    $('#programs_table').DataTable( {
+    var table = $('#programs_table').DataTable( {
         dom: 'Bfrtlp',
         ajax: {
             url: "./inc/query/programs.php",
@@ -56,6 +64,12 @@ $(document).ready(function() {
         },
         serverSide: true,
         columns: [
+            {
+                className:      'details-control',
+                orderable:      false,
+                data:           null,
+                defaultContent: ''
+            },
             {data: "institutions.name"},
             {data: "institutions.other_name"},
             {data: "programs.term"},
@@ -63,7 +77,8 @@ $(document).ready(function() {
             {data: "programs.language"}
         ],
         columnDefs: [
-            { "visible": false, "targets": 1 }
+            { "visible": false, "targets": 2 },
+            {"searchable": false, "targets": 0}
         ],
         select: true,
         buttons: [
@@ -73,6 +88,22 @@ $(document).ready(function() {
             'csv', 'print'
         ],
         paging: true,
-        lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]]
+        lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]],
+        order: [[1, 'asc']]
     });
+    $('#programs_table tbody').on('click', 'td.details-control', function () {
+        var tr = $(this).closest('tr');
+        var row = table.row( tr );
+ 
+        if ( row.child.isShown() ) {
+            // This row is already open - close it
+            row.child.hide();
+            tr.removeClass('shown');
+        }
+        else {
+            // Open this row
+            row.child( format(row.data()) ).show();
+            tr.addClass('shown');
+        }
+    } );
 });

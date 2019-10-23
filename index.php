@@ -11,7 +11,7 @@ include('./inc/components/navbar_index.php');
 
 <!-- Table START -->
 <div class="container">
-    <table id="main_table" class="table table-condensed table-hover table-nowrap table-striped table-bordered" cellspacing="0" width="100%">
+    <table id="main_table" class="display table-condensed" cellspacing="0" width="100%">
         <thead>
             <tr>
                 <th>Institutions</th>

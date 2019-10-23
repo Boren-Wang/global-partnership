@@ -72,7 +72,7 @@ Editor::inst($db, 'agreements')
         Field::inst('files_2.web_path'),
         Field::inst('files_3.id'),
         Field::inst('files_3.name'),
-        Field::inst('files_3.web_path'),
+        Field::inst('files_3.web_path')
         
     )
     ->leftJoin('institutions', 'institutions.id', '=', 'agreements.ins_id')

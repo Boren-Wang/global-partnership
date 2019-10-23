@@ -21,7 +21,8 @@
     	->validator('Validate::notEmpty'),
     Field::inst( 'programs.type' )
       ->validator('Validate::notEmpty'),
-    Field::inst( 'programs.language' )
+    Field::inst( 'programs.language' ),
+    Field::inst( 'programs.updated_at' )
   )
   ->leftJoin( 'institutions', 'institutions.id', '=', 'programs.institutionID' )
   ->process( $_POST )

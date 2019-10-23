@@ -1,4 +1,25 @@
 var editor;
+function format ( d ) {
+    // `d` is the original data object for the row
+    return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
+        
+
+        '<tr>'+
+            '<td>Latitude:</td>'+
+            '<td>'+d.latitude+'</td>'+
+        '</tr>'+
+
+        '<tr>'+
+            '<td>Longitude:</td>'+
+            '<td>'+d.longitude+'</td>'+
+        '</tr>'+   
+
+        '<tr>'+
+            '<td>Last Edit Time:</td>'+
+            '<td>'+d.updated_at+'</td>'+
+        '</tr>'+
+    '</table>';
+}
 $(document).ready(function() {
     editor = new $.fn.dataTable.Editor( {
         ajax: "./inc/query/institutions.php",
@@ -104,7 +125,7 @@ $(document).ready(function() {
         ]
     });
 
-    $('#institutions_table').DataTable( {
+    var table = $('#institutions_table').DataTable( {
         dom: 'Bfrtlp',
         ajax: {
             url: "./inc/query/institutions.php",
@@ -112,6 +133,12 @@ $(document).ready(function() {
         },
         serverSide: true,
         columns: [
+            {
+                className:      'details-control',
+                orderable:      false,
+                data:           null,
+                defaultContent: ''
+            },
             {data: "name"},
             {data: "other_name"},
             {data: "since"},
@@ -121,8 +148,8 @@ $(document).ready(function() {
                 }},
             {data: "country"},
             {data: "city"},
-            {data: "latitude"},
-            {data: "longitude"},
+            // {data: "latitude"},
+            // {data: "longitude"},
             {data: "hide",
                 render: function(val, type, row) {
                     return val == 0 ? "Public" : "Private";
@@ -161,9 +188,26 @@ $(document).ready(function() {
         paging: true,
         lengthMenu: [[10, 25, 50, -1], [10, 25, 50, "All"]],
         columnDefs: [
-            { "visible": false, "targets": 1 }
+            { "visible": false, "targets": 2 },
+            {"searchable": false, "targets": 0}
         ],
+        order: [[1, 'asc']]
     });
+    $('#institutions_table tbody').on('click', 'td.details-control', function () {
+        var tr = $(this).closest('tr');
+        var row = table.row( tr );
+ 
+        if ( row.child.isShown() ) {
+            // This row is already open - close it
+            row.child.hide();
+            tr.removeClass('shown');
+        }
+        else {
+            // Open this row
+            row.child( format(row.data()) ).show();
+            tr.addClass('shown');
+        }
+    } );
 });
  
 

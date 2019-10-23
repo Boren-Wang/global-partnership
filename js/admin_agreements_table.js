@@ -4,9 +4,15 @@ function format ( d ) {
     // `d` is the original data object for the row
     return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
         '<tr>'+
+            '<td>Remark:</td>'+
+            '<td>'+d.agreements.remark+'</td>'+
+        '</tr>'+
+
+        '<tr>'+
             '<td>Last Edit Time:</td>'+
             '<td>'+d.agreements.updated_at+'</td>'+
-        '</tr>'+
+        '</tr>'+    
+
     '</table>';
 }
 
@@ -34,16 +40,18 @@ $(document).ready(function() {
                 { label: "MOU-Institution Wide", value: "MOU-Institution Wide" },
                 { label: "MOU-Specific", value: "MOU-Specific" },
                 { label: "SEA (Student Exchange Agreement)", value: "SEA" },
+                { label: "VSP (Visiting Student Program)", value: "VSP" },
+                { label: "SSA (Study Abroad Program)", value: "SSA" },
                 { label: "DDP (Dual Degree Program)", value: "DDP" },
                 { label: "BMP (Bachelor & Master Degree Program)", value: "BMP" },
+                { label: "JGP (Joint Graduate Program)", value: "JGP" },
                 { label: "GSI (Global Summer Institute)", value: "GSI" },
                 { label: "IEC (Intensive English Program)", value: "IEC" },
-                { label: "VSP (Visiting Student Program)", value: "VSP" },
-                { label: "JGP (Joint Graduate Program)", value: "JGP" },
                 { label: "Agency (Student Recruitment Agency)", value: "Agency" },
                 { label: "Joint Institute (Joint Institute Development)", value: "Joint Institute" },
-                { label: "History", value: "History" },
-                { label: "Government Application", value: "Government Application" }
+                { label: "Government Application", value: "Government Application" },
+                { label: "History", value: "History" }
+               
             ]
         }, {
             label: "Status:",
@@ -167,7 +175,8 @@ $(document).ready(function() {
             { data: "agreements.partner_department" },
 
             // { data: "agreements.code" },
-            { data: "agreements.remark" },
+            // 9
+            // { data: "agreements.remark" }, 
 
             { data: "files_1.id",
                 render: function (val) {
@@ -216,6 +225,7 @@ $(document).ready(function() {
         ], columnDefs: [
             { "searchable": false, "targets": 5 },
             { "searchable": false, "targets": 6 },
+            {"searchable": false, "targets": 0},
             { "visible": false, "targets": [2]} 
         ],
         select: true,

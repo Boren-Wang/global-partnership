@@ -29,6 +29,7 @@
           ->validator('Validate::notEmpty')
           ->validator('Validate::numeric'),
       Field::inst( 'hide' ),
+      Field::inst( 'updated_at' ),
       Field::inst( 'reason' )
     )
   ->process( $_POST )

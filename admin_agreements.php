@@ -20,7 +20,7 @@
             <th>SBU Department</th>
             <th>Partner Department</th>
             <!-- <th>Agreement Code</th> -->
-            <th>Remarks</th>
+            <!-- <th>Remarks</th> -->
             <th>Original Agreement</th>
             <th>Document 1</th>
             <th>Document 2</th>
