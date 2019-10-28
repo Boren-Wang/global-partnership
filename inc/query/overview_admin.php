@@ -13,6 +13,7 @@ use
     DataTables\Editor\Field,
     DataTables\Editor\Format,
     DataTables\Editor\Join,
+    DataTables\Editor\Mjoin,
     DataTables\Editor\Upload,
     DataTables\Editor\Validate;
 
@@ -56,6 +57,24 @@ Editor::inst($db, 'agreements')
         Field::inst('files_2.id'),
         Field::inst('files_2.name'),
         Field::inst('files_2.web_path')
+    )
+    ->join(
+        Mjoin::inst( 'files' )
+            ->link( 'agreements.id', 'agreements_files.agreement_id')
+            ->link( 'files.file_id', 'agreements_files.file_id' )
+            ->fields(
+                Field::inst( 'file_id' )
+                    ->setFormatter(Format::ifEmpty(null))
+                    ->upload( 
+                        Upload::inst( $_SERVER['DOCUMENT_ROOT'].'/uploads/__ID__.__EXTN__' )
+                            ->db( 'files', 'file_id', array(
+                                'name'    => Upload::DB_FILE_NAME,
+                                'size'    => Upload::DB_FILE_SIZE,
+                                'web_path'    => Upload::DB_WEB_PATH
+                                )   
+                            )
+                    )
+            )
     )
     ->leftJoin( 'institutions', 'institutions.id', '=', 'agreements.ins_id' )
     ->leftJoin('files_1', 'files_1.id', '=', 'agreements.file_1_id')

@@ -19,8 +19,9 @@
             <th>Status</th>
             <!-- <th>Remarks</th> -->
             <th>Visibility</th>
-            <th>Original Agreement</th>
-            <th>Document 1</th>
+            <th>Agreement</th>
+            <th>Addendum</th>
+            <th>Other Files</th>
         </tr>
         </thead>
     </table>

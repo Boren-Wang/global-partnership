@@ -21,9 +21,9 @@
             <th>Partner Department</th>
             <!-- <th>Agreement Code</th> -->
             <!-- <th>Remarks</th> -->
-            <th>Original Agreement</th>
-            <th>Document 1</th>
-            <th>Files</th>
+            <th>Agreement</th>
+            <th>Addendum</th>
+            <th>Other Files</th>
             <!-- <th>Update Time</th> -->
         </tr>
         </thead>

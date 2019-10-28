@@ -90,7 +90,7 @@ $(document).ready(function() {
             name: "agreements.remark"
         // },
         }, {
-            label: "Original Agreement:",
+            label: "Agreement:",
             name: "agreements.file_1_id",
             type: "upload",
             noFileText: "No File",
@@ -99,7 +99,7 @@ $(document).ready(function() {
                 return "<a href='" + editor.file( 'files_1', id ).web_path + "' download>" + editor.file( 'files_1', id ).name + "</a>";
             }
         }, {
-            label: "Document 1:",
+            label: "Addendum:",
             name: "agreements.file_2_id",
             type: "upload",
             noFileText: "No File",
@@ -109,7 +109,7 @@ $(document).ready(function() {
             }
         }, 
         {
-            label: "Documents:",
+            label: "Other Files:",
             name: "files[].file_id",
             type: "uploadMany",
             noFileText: "No File",
@@ -187,7 +187,7 @@ $(document).ready(function() {
                         "<a href='" + editor.file( 'files_1', val ).web_path + "' download=" + editor.file( 'files_1', val ).name + ">" + editor.file( 'files_1', val ).name + "</a>" : ""
                 },
                 defaultContent: "No File",
-                title: "Original Agreement"
+                title: "Agreement"
             },
             
             { data: "files_2.id",
@@ -196,7 +196,7 @@ $(document).ready(function() {
                         "<a href='" + editor.file( 'files_2', val ).web_path + "' download=" + editor.file( 'files_2', val ).name + ">" + editor.file( 'files_2', val ).name + "</a>" : ""
                 },
                 defaultContent: "No File",
-                title: "Document 1"
+                title: "Addendum"
             },
             {
                 data: "files",
@@ -205,7 +205,7 @@ $(document).ready(function() {
                         d.length+' file(s)' :
                         'No file';
                 },
-                title: "Files"
+                title: "Other Files"
             }
             // ,{ data: "agreements.updated_at" }
 

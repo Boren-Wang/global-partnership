@@ -40,7 +40,7 @@ var table = $(document).ready(function() {
                         "<a href='" + table.file( 'files_1', val ).web_path + "' download=" + table.file( 'files_1', val ).name + ">" + table.file( 'files_1', val ).name + "</a>" : ""
                 },
                 defaultContent: "No File",
-                title: "Original Agreement"
+                title: "Agreement"
             },
             {data: "files_2.id",
                 render: function (val) {
@@ -48,13 +48,23 @@ var table = $(document).ready(function() {
                         "<a href='" + table.file( 'files_2', val ).web_path + "' download=" + table.file( 'files_2', val ).name + ">" + table.file( 'files_2', val ).name + "</a>" : ""
                 },
                 defaultContent: "No File",
-                title: "Document 1"
+                title: "Addendum"
+            },
+            {
+                data: "files",
+                render: function ( d ) {
+                    return d.length ?
+                        d.length+' file(s)' :
+                        'No file';
+                },
+                title: "Other Files"
             }
             ],
         columnDefs: [
             { "searchable": false, "targets": 6 },
             { "searchable": false, "targets": 7 },
-            { "searchable": false, "targets": 0 },
+            { "searchable": false, "targets": [0, 12] },
+            { "orderable": false, "targets": [12] },
             { "visible": false, "targets": 2}
         ],
         selected: true,
