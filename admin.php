@@ -21,7 +21,6 @@
             <th>Visibility</th>
             <th>Original Agreement</th>
             <th>Document 1</th>
-            <th>Document 2</th>
         </tr>
         </thead>
     </table>

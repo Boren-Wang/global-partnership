@@ -23,7 +23,7 @@
             <!-- <th>Remarks</th> -->
             <th>Original Agreement</th>
             <th>Document 1</th>
-            <th>Document 2</th>
+            <th>Files</th>
             <!-- <th>Update Time</th> -->
         </tr>
         </thead>

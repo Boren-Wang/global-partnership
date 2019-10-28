@@ -49,15 +49,8 @@ var table = $(document).ready(function() {
                 },
                 defaultContent: "No File",
                 title: "Document 1"
-            },
-            { data: "files_3.id",
-                render: function (val) {
-                    return val != null ?
-                        "<a href='" + table.file( 'files_3', val ).web_path + "' download=" + table.file( 'files_3', val ).name + ">" + table.file( 'files_3', val ).name + "</a>" : ""
-                },
-                defaultContent: "No File",
-                title: "Document 2"
-            }],
+            }
+            ],
         columnDefs: [
             { "searchable": false, "targets": 6 },
             { "searchable": false, "targets": 7 },

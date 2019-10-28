@@ -88,6 +88,7 @@ $(document).ready(function() {
         }, {
             label: "Remarks:",
             name: "agreements.remark"
+        // },
         }, {
             label: "Original Agreement:",
             name: "agreements.file_1_id",
@@ -106,14 +107,16 @@ $(document).ready(function() {
             display: function(id) {
                 return "<a href='" + editor.file( 'files_2', id ).web_path + "' download>" + editor.file( 'files_2', id ).name + "</a>";
             }
-        }, {
-            label: "Document 2:",
-            name: "agreements.file_3_id",
-            type: "upload",
+        }, 
+        {
+            label: "Documents:",
+            name: "files[].file_id",
+            type: "uploadMany",
             noFileText: "No File",
             clearText: "Clear",
-            display: function(id) {
-                return "<a href='" + editor.file( 'files_3', id ).web_path + "' download>" + editor.file( 'files_3', id ).name + "</a>";
+            display: function(id, counter) {
+                console.log(editor.file( 'files', id ).web_path)
+                return "<a href='" + editor.file( 'files', id ).web_path + "' download>" + editor.file( 'files', id ).name + "</a>";
             }
         }
         // }, { 
@@ -195,14 +198,14 @@ $(document).ready(function() {
                 defaultContent: "No File",
                 title: "Document 1"
             },
-
-            { data: "files_3.id",
-                render: function (val) {
-                    return val != null ?
-                        "<a href='" + editor.file( 'files_3', val ).web_path + "' download=" + editor.file( 'files_3', val ).name + ">" + editor.file( 'files_3', val ).name + "</a>" : ""
+            {
+                data: "files",
+                render: function ( d ) {
+                    return d.length ?
+                        d.length+' file(s)' :
+                        'No file';
                 },
-                defaultContent: "No File",
-                title: "Document 2"
+                title: "Files"
             }
             // ,{ data: "agreements.updated_at" }
 
@@ -225,8 +228,9 @@ $(document).ready(function() {
         ], columnDefs: [
             { "searchable": false, "targets": 5 },
             { "searchable": false, "targets": 6 },
-            {"searchable": false, "targets": 0},
-            { "visible": false, "targets": [2]} 
+            {"searchable": false, "targets": [0, 12]},
+            { "visible": false, "targets": [2]},
+            {"orderable": false, "targets": 12} 
         ],
         select: true,
         buttons: [
