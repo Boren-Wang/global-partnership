@@ -33,7 +33,7 @@ Editor::inst($db, 'agreements')
         Field::inst('agreements.file_1_id')
             ->setFormatter(Format::ifEmpty(null))
             ->upload(
-                Upload::inst($_SERVER['DOCUMENT_ROOT'].'/uploads/__ID__.__EXTN__')
+                Upload::inst($_SERVER['DOCUMENT_ROOT'].'/uploads/original/__ID__.__EXTN__')
                     ->db('files_1', 'id', array(
                         'name' => Upload::DB_FILE_NAME,
                         'size' => Upload::DB_FILE_SIZE,
@@ -43,7 +43,7 @@ Editor::inst($db, 'agreements')
         Field::inst('agreements.file_2_id')
             ->setFormatter(Format::ifEmpty(null))
             ->upload(
-                Upload::inst($_SERVER['DOCUMENT_ROOT'].'/uploads/__ID__.__EXTN__')
+                Upload::inst($_SERVER['DOCUMENT_ROOT'].'/uploads/addendum/__ID__.__EXTN__')
                     ->db('files_2', 'id', array(
                             'name' => Upload::DB_FILE_NAME,
                             'size' => Upload::DB_FILE_SIZE,
@@ -66,7 +66,7 @@ Editor::inst($db, 'agreements')
                 Field::inst( 'file_id' )
                     ->setFormatter(Format::ifEmpty(null))
                     ->upload( 
-                        Upload::inst( $_SERVER['DOCUMENT_ROOT'].'/uploads/__ID__.__EXTN__' )
+                        Upload::inst( $_SERVER['DOCUMENT_ROOT'].'/uploads/others/__ID__.__EXTN__' )
                             ->db( 'files', 'file_id', array(
                                 'name'    => Upload::DB_FILE_NAME,
                                 'size'    => Upload::DB_FILE_SIZE,

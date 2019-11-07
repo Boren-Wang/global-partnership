@@ -115,7 +115,6 @@ $(document).ready(function() {
             noFileText: "No File",
             clearText: "Clear",
             display: function(id, counter) {
-                console.log(editor.file( 'files', id ).web_path)
                 return "<a href='" + editor.file( 'files', id ).web_path + "' download>" + editor.file( 'files', id ).name + "</a>";
             }
         }
