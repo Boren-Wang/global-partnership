@@ -35,14 +35,21 @@ function setMap(response) {
     });
 
     var infoWindow = new google.maps.InfoWindow();
+    var header = (response[i].institutions.link?'<a href="' +response[i].institutions.link+ '">' + response[i].institutions.name + '</a>':response[i].institutions.name) + "</h6>"
+    var semester_link = response[i].programs.semester_link?'<h6><a href="' +response[i].programs.semester_link+ '">' + "Semester Program" + '</a></h6><br>':""
+    var summer_link = response[i].programs.summer_link?'<h6><a href="' +response[i].programs.summer_link+ '">' + "Summer Program" + '</a></h6><br>':""
+    var winter_link = response[i].programs.winter_link?'<h6><a href="' +response[i].programs.winter_link+ '">' + "Winter Program" + '</a></h6><br>':""
 
-    var infoContent = "<h3>" + response[i].institutions.name + "</h3>"
+    var infoContent = "<h3>" + header + "</h3>"
       + "<h6>Founded Year - " + response[i].institutions.since + "</h6>"
       + "<h6>Location - " + response[i].institutions.city +  ", " + response[i].institutions.country + "</h6>"
-      + "<h6>Institution Link - " + (response[i].institutions.link?'<a href="' +response[i].institutions.link+ '">' + "Link" + '</a>':"None") + "</h6>"
-      + "<h6>Semester Program - " + (response[i].programs.semester_link?'<a href="' +response[i].programs.semester_link+ '">' + "Link" + '</a>':"None") + "</h6>"
-      + "<h6>Summer Program - " + (response[i].programs.summer_link?'<a href="' +response[i].programs.summer_link+ '">' + "Link" + '</a>':"None") + "</h6>"
-      + "<h6>Winter Program - " + (response[i].programs.winter_link?'<a href="' +response[i].programs.winter_link+ '">' + "Link" + '</a>':"None") + "</h6>"
+      + semester_link
+      + summer_link
+      + winter_link
+      // + "<h6>Institution Link - " + (response[i].institutions.link?'<a href="' +response[i].institutions.link+ '">' + "Link" + '</a>':"None") + "</h6>"
+      // + "<h6>Semester Program - " + (response[i].programs.semester_link?'<a href="' +response[i].programs.semester_link+ '">' + "Link" + '</a>':"None") + "</h6>"
+      // + "<h6>Summer Program - " + (response[i].programs.summer_link?'<a href="' +response[i].programs.summer_link+ '">' + "Link" + '</a>':"None") + "</h6>"
+      // + "<h6>Winter Program - " + (response[i].programs.winter_link?'<a href="' +response[i].programs.winter_link+ '">' + "Link" + '</a>':"None") + "</h6>"
 
     if(response[i].term) {
       infoContent += "<h6>Terms - " + response[i].programs.term + "</h6>";
