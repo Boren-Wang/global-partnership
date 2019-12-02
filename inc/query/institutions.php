@@ -15,6 +15,7 @@
       Field::inst( 'name' )
           ->validator('Validate::notEmpty'),
       Field::inst( 'other_name' ),
+      Field::inst( 'link' ),
       Field::inst( 'since' )
           ->validator('Validate::numeric'),
       Field::inst( 'hei' ),

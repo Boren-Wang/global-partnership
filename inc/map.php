@@ -15,8 +15,12 @@ Editor::inst($db, 'institutions')
         Field::inst( 'institutions.city' ),
         Field::inst( 'institutions.country' ),
         Field::inst( 'institutions.hide' ),
+        Field::inst( 'institutions.link' ),
         Field::inst( 'programs.term' ),
-        Field::inst( 'programs.language' )
+        Field::inst( 'programs.language' ),
+        Field::inst( 'programs.semester_link' ),
+        Field::inst( 'programs.summer_link' ),
+        Field::inst( 'programs.winter_link' )
     )
     ->leftJoin('programs', 'institutions.id' ,'=', 'programs.institutionID')
     ->process($_POST)

@@ -39,6 +39,10 @@ function setMap(response) {
     var infoContent = "<h3>" + response[i].institutions.name + "</h3>"
       + "<h6>Founded Year - " + response[i].institutions.since + "</h6>"
       + "<h6>Location - " + response[i].institutions.city +  ", " + response[i].institutions.country + "</h6>"
+      + "<h6>Institution Link - " + (response[i].institutions.link?'<a href="' +response[i].institutions.link+ '">' + "Link" + '</a>':"None") + "</h6>"
+      + "<h6>Semester Program - " + (response[i].programs.semester_link?'<a href="' +response[i].programs.semester_link+ '">' + "Link" + '</a>':"None") + "</h6>"
+      + "<h6>Summer Program - " + (response[i].programs.summer_link?'<a href="' +response[i].programs.summer_link+ '">' + "Link" + '</a>':"None") + "</h6>"
+      + "<h6>Winter Program - " + (response[i].programs.winter_link?'<a href="' +response[i].programs.winter_link+ '">' + "Link" + '</a>':"None") + "</h6>"
 
     if(response[i].term) {
       infoContent += "<h6>Terms - " + response[i].programs.term + "</h6>";

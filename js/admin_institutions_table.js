@@ -1,19 +1,19 @@
 var editor;
 function format ( d ) {
     // `d` is the original data object for the row
-    return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
-        
-
+    return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+  
+        '<tr>'+
+            '<td>Official Website Link:</td>'+
+            (d.link?'<td><a href="' +d.link+ '">' + d.link+ '</a></td>':"<td>None</td>")+ 
+        '</tr>'+
         '<tr>'+
             '<td>Latitude:</td>'+
             '<td>'+d.latitude+'</td>'+
         '</tr>'+
-
         '<tr>'+
             '<td>Longitude:</td>'+
             '<td>'+d.longitude+'</td>'+
         '</tr>'+   
-
         '<tr>'+
             '<td>Last Edit Time:</td>'+
             '<td>'+d.updated_at+'</td>'+
@@ -38,7 +38,10 @@ $(document).ready(function() {
         },{
             label: "Other Name Used (if any):",
             name: "other_name"
-        },{
+        }, {
+            label: "Institution Link:",
+            name: "link"
+        }, {
             label: "Initial Partnership Year:",
             name: "since"
         }, {
