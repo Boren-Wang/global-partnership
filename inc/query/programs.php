@@ -22,7 +22,10 @@
     Field::inst( 'programs.type' )
       ->validator('Validate::notEmpty'),
     Field::inst( 'programs.language' ),
-    Field::inst( 'programs.updated_at' )
+    Field::inst( 'programs.updated_at' ),
+    Field::inst( 'programs.semester_link' ),
+    Field::inst( 'programs.summer_link' ),
+    Field::inst( 'programs.winter_link' )
   )
   ->leftJoin( 'institutions', 'institutions.id', '=', 'programs.institutionID' )
   ->process( $_POST )

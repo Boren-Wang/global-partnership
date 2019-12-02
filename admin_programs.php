@@ -15,6 +15,9 @@
             <th>Term</th>
             <th>Type</th>
             <th>Languages</th>
+            <!-- <th>Semester</th>
+            <th>Summer</th>
+            <th>Winter</th> -->
         </tr>
         </thead>
     </table>

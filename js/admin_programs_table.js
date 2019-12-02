@@ -6,6 +6,18 @@ function format ( d ) {
             '<td>Last Edit Time:</td>'+
             '<td>'+d.programs.updated_at+'</td>'+
         '</tr>'+
+        '<tr>'+
+            '<td>Semester Program:</td>'+
+            (d.programs.semester_link?'<td><a href="' +d.programs.semester_link+ '">' + d.programs.semester_link+ '</a></td>':"<td>None</td>")+ 
+        '</tr>'+
+        '<tr>'+
+            '<td>Summer Program:</td>'+
+            (d.programs.summer_link?'<td><a href="' +d.programs.summer_link+ '">' + d.programs.summer_link+ '</a></td>':"<td>None</td>")+ 
+        '</tr>'+
+        '<tr>'+
+            '<td>Winter Program:</td>'+
+            (d.programs.winter_link?'<td><a href="' +d.programs.winter_link+ '">' + d.programs.winter_link+ '</a></td>':"<td>None</td>")+ 
+        '</tr>'+
     '</table>';
 }
 $(document).ready(function() {
@@ -24,7 +36,8 @@ $(document).ready(function() {
             label: "Institution:",
             name: "programs.institutionID",
             type: "select"
-        }, {
+        }, 
+        {
             label: "Term:",
             name: "programs.term",
             type: "select",
@@ -38,7 +51,8 @@ $(document).ready(function() {
                 "Summer"
             ],
             default: " "
-        }, {
+        }, 
+        {
             label: "Type:",
             name: "programs.type",
             type: "select",
@@ -53,6 +67,15 @@ $(document).ready(function() {
         }, {
             label: "Languages:",
             name: "programs.language"
+        }, {
+            label: "Semester Program:",
+            name: "programs.semester_link"
+        }, {
+            label: "Summer Program:",
+            name: "programs.summer_link"
+        }, {
+            label: "Winter Program:",
+            name: "programs.winter_link"
         }]
     });
 
@@ -74,7 +97,10 @@ $(document).ready(function() {
             {data: "institutions.other_name"},
             {data: "programs.term"},
             {data: "programs.type"},
-            {data: "programs.language"}
+            {data: "programs.language"},
+            // {data: "programs.semester_link"},
+            // {data: "programs.summer_link"},
+            // {data: "programs.winter_link"}
         ],
         columnDefs: [
             { "visible": false, "targets": 2 },
