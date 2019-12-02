@@ -36,9 +36,9 @@ function setMap(response) {
 
     var infoWindow = new google.maps.InfoWindow();
     var header = (response[i].institutions.link?'<a href="' +response[i].institutions.link+ '">' + response[i].institutions.name + '</a>':response[i].institutions.name) + "</h6>"
-    var semester_link = response[i].programs.semester_link?'<h6><a href="' +response[i].programs.semester_link+ '">' + "Semester Program" + '</a></h6><br>':""
-    var summer_link = response[i].programs.summer_link?'<h6><a href="' +response[i].programs.summer_link+ '">' + "Summer Program" + '</a></h6><br>':""
-    var winter_link = response[i].programs.winter_link?'<h6><a href="' +response[i].programs.winter_link+ '">' + "Winter Program" + '</a></h6><br>':""
+    var semester_link = response[i].programs.semester_link?'<h6><a href="' +response[i].programs.semester_link+ '">' + "Semester Program" + '</a></h6>':""
+    var summer_link = response[i].programs.summer_link?'<h6><a href="' +response[i].programs.summer_link+ '">' + "Summer Program" + '</a></h6>':""
+    var winter_link = response[i].programs.winter_link?'<h6><a href="' +response[i].programs.winter_link+ '">' + "Winter Program" + '</a></h6>':""
 
     var infoContent = "<h3>" + header + "</h3>"
       + "<h6>Founded Year - " + response[i].institutions.since + "</h6>"

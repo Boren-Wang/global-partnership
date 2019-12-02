@@ -6,18 +6,18 @@ function format ( d ) {
             '<td>Last Edit Time:</td>'+
             '<td>'+d.programs.updated_at+'</td>'+
         '</tr>'+
-        '<tr>'+
-            '<td>Semester Program:</td>'+
-            (d.programs.semester_link?'<td><a href="' +d.programs.semester_link+ '">' + d.programs.semester_link+ '</a></td>':"<td>None</td>")+ 
-        '</tr>'+
-        '<tr>'+
-            '<td>Summer Program:</td>'+
-            (d.programs.summer_link?'<td><a href="' +d.programs.summer_link+ '">' + d.programs.summer_link+ '</a></td>':"<td>None</td>")+ 
-        '</tr>'+
-        '<tr>'+
-            '<td>Winter Program:</td>'+
-            (d.programs.winter_link?'<td><a href="' +d.programs.winter_link+ '">' + d.programs.winter_link+ '</a></td>':"<td>None</td>")+ 
-        '</tr>'+
+        // '<tr>'+
+        //     '<td>Semester Program:</td>'+
+        //     (d.programs.semester_link?'<td><a href="' +d.programs.semester_link+ '">' + d.programs.semester_link+ '</a></td>':"<td>None</td>")+ 
+        // '</tr>'+
+        // '<tr>'+
+        //     '<td>Summer Program:</td>'+
+        //     (d.programs.summer_link?'<td><a href="' +d.programs.summer_link+ '">' + d.programs.summer_link+ '</a></td>':"<td>None</td>")+ 
+        // '</tr>'+
+        // '<tr>'+
+        //     '<td>Winter Program:</td>'+
+        //     (d.programs.winter_link?'<td><a href="' +d.programs.winter_link+ '">' + d.programs.winter_link+ '</a></td>':"<td>None</td>")+ 
+        // '</tr>'+
     '</table>';
 }
 $(document).ready(function() {
@@ -37,37 +37,38 @@ $(document).ready(function() {
             name: "programs.institutionID",
             type: "select"
         }, 
+        // {
+        //     label: "Term:",
+        //     name: "programs.term",
+        //     type: "select",
+        //     options: [
+        //         " ",
+        //         "Fall / Spring",
+        //         "Fall / Spring / Summer",
+        //         "Fall / Spring / Winter",
+        //         "Fall / Spring / Summer / Winter",
+        //         "Winter",
+        //         "Summer"
+        //     ],
+        //     default: " "
+        // }, 
+        // {
+        //     label: "Type:",
+        //     name: "programs.type",
+        //     type: "select",
+        //     options: [
+        //         " ",
+        //         "Partner University",
+        //         "Internship",
+        //         "Faculty-Led Program",
+        //         "Partner University / Internship"
+        //     ],
+        //     default: " "
+        // }, {
+        //     label: "Languages:",
+        //     name: "programs.language"
+        // }, 
         {
-            label: "Term:",
-            name: "programs.term",
-            type: "select",
-            options: [
-                " ",
-                "Fall / Spring",
-                "Fall / Spring / Summer",
-                "Fall / Spring / Winter",
-                "Fall / Spring / Summer / Winter",
-                "Winter",
-                "Summer"
-            ],
-            default: " "
-        }, 
-        {
-            label: "Type:",
-            name: "programs.type",
-            type: "select",
-            options: [
-                " ",
-                "Partner University",
-                "Internship",
-                "Faculty-Led Program",
-                "Partner University / Internship"
-            ],
-            default: " "
-        }, {
-            label: "Languages:",
-            name: "programs.language"
-        }, {
             label: "Semester Program:",
             name: "programs.semester_link"
         }, {
@@ -95,12 +96,29 @@ $(document).ready(function() {
             },
             {data: "institutions.name"},
             {data: "institutions.other_name"},
-            {data: "programs.term"},
-            {data: "programs.type"},
-            {data: "programs.language"},
-            // {data: "programs.semester_link"},
-            // {data: "programs.summer_link"},
-            // {data: "programs.winter_link"}
+            // {data: "programs.term"},
+            // {data: "programs.type"},
+            // {data: "programs.language"},
+            {   
+                data: "programs.semester_link",
+                render: function (val) {
+                    return val != null ?
+                        "<a href='" + val + "'>Link</a>" : "None"
+                },
+            },
+            
+            {
+                data: "programs.summer_link",
+                render: function (val) {
+                    return val != null ?
+                        "<a href='" + val + "'>Link</a>" : "None"
+            },},
+            {
+                data: "programs.winter_link",
+                render: function (val) {
+                    return val != null ?
+                        "<a href='" + val + "'>Link</a>" : "None"
+            },}
         ],
         columnDefs: [
             { "visible": false, "targets": 2 },

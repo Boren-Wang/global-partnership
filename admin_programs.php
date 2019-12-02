@@ -12,12 +12,12 @@
             <th>...</th>
             <th>Institution</th>
             <th>Other Name Used</th>
-            <th>Term</th>
+            <!-- <th>Term</th>
             <th>Type</th>
-            <th>Languages</th>
-            <!-- <th>Semester</th>
+            <th>Languages</th> -->
+            <th>Semester</th>
             <th>Summer</th>
-            <th>Winter</th> -->
+            <th>Winter</th>
         </tr>
         </thead>
     </table>
