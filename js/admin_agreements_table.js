@@ -4,14 +4,15 @@ function format ( d ) {
     // `d` is the original data object for the row
     return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
         '<tr>'+
-            '<td class="child">Remark:</td>'+
-            '<td class="child">'+d.agreements.remark+'</td>'+
+            '<td>Remark:</td>'+
+            '<td>'+d.agreements.remark+'</td>'+
         '</tr>'+
 
         '<tr>'+
-            '<td class="child">Last Edit Time:</td>'+
-            '<td class="child">'+d.agreements.updated_at+'</td>'+
+            '<td>Last Edit Time:</td>'+
+            '<td>'+d.agreements.updated_at+'</td>'+
         '</tr>'+    
+
     '</table>';
 }
 
@@ -40,12 +41,11 @@ $(document).ready(function() {
                 { label: "MOU-Specific", value: "MOU-Specific" },
                 { label: "SEA (Student Exchange Agreement)", value: "SEA" },
                 { label: "VSP (Visiting Student Program)", value: "VSP" },
-                { label: "SAA (Study Abroad Agreement)", value: "SAA" },
+                { label: "SSA (Study Abroad Program)", value: "SSA" },
                 { label: "DDP (Dual Degree Program)", value: "DDP" },
                 { label: "BMP (Bachelor & Master Degree Program)", value: "BMP" },
                 { label: "JGP (Joint Graduate Program)", value: "JGP" },
                 { label: "GSI (Global Summer Institute)", value: "GSI" },
-                { label: "GTP (Global Training Program)", value: "GTP" },
                 { label: "IEC (Intensive English Program)", value: "IEC" },
                 { label: "Agency (Student Recruitment Agency)", value: "Agency" },
                 { label: "Joint Institute (Joint Institute Development)", value: "Joint Institute" },
